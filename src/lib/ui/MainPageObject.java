@@ -66,14 +66,11 @@ public class MainPageObject {
     public void swipeUp(int timeOfSwipe)
     {
         TouchAction action = new TouchAction(driver);
-        Dimension size = driver.manage().window().getSize();
-        int x = size.width / 2;
-        int start_y = (int)(size.height*0.8);
-        int end_y = (int)(size.height*0.2);
+      Dimension size = driver.manage().window().getSize();
+      int x = size.width / 2;
+      int start_y = (int)(size.height*0.8);
+      int end_y = (int)(size.height*0.2);
         action
-//                .press(x,start_y)
-//                .waitAction(timeOfSwipe)
-//                .moveTo(x,end_y)
                 .press(PointOption.point(x,start_y))
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(timeOfSwipe)))
                 .moveTo(PointOption.point(x,end_y))
@@ -113,15 +110,15 @@ public class MainPageObject {
         int lower_y = upper_y + element.getSize().getHeight();
         int middle_y = (upper_y+lower_y)/2;
 
-        TouchAction action=new TouchAction((AppiumDriver) driver);
-//        action
+        TouchAction action=new TouchAction(driver);
+        action
 //                .press(right_x,middle_y)
 //                .waitAction(300)
 //                .moveTo(left_x,middle_y)
 //                .release()
 //                .perform();
-        action.press(PointOption.point(right_x,middle_y));
-        action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)));
+        .press(PointOption.point(right_x,middle_y))
+        .waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)));
 
 
 

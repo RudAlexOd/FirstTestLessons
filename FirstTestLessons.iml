@@ -11,5 +11,6 @@
     <orderEntry type="library" name="selenium-server-standalone-3.14.0" level="project" />
     <orderEntry type="library" name="javax.websocket-api-1.1" level="project" />
     <orderEntry type="library" name="junit-4.12" level="project" />
+    <orderEntry type="library" name="selenium-server-standalone-3.14.01" level="project" />
   </component>
 </module>

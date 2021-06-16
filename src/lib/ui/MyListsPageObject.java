@@ -38,7 +38,7 @@ public class MyListsPageObject extends MainPageObject
     public void waitForArticleToDisappearByTitle(String article_title)
     {
         String article_xpath = getFolderXpathByName(article_title);
-        this.waitForElementNotPresent(article_xpath,"Saved article still present with title " + article_title, 15);
+        this.waitForElementNotPresent(article_xpath,"Saved article still present with title " + article_title, 5);
     }
     public void swipeByArticleToDelete(String article_title)
     {
