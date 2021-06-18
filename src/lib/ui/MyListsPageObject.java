@@ -1,7 +1,6 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.By;
 
 public class MyListsPageObject extends MainPageObject
 {
@@ -33,17 +32,17 @@ public class MyListsPageObject extends MainPageObject
     public void waitForArticleToAppearByTitle(String article_title)
     {
         String article_xpath = getFolderXpathByName(article_title);
-        this.waitForElementPresent(article_xpath,"Cannot find saved article by title " + article_title, 15);
+        this.waitForElementPresent(article_xpath,"Cannot find saved article by title" + article_title, 15);
     }
     public void waitForArticleToDisappearByTitle(String article_title)
     {
         String article_xpath = getFolderXpathByName(article_title);
-        this.waitForElementNotPresent(article_xpath,"Saved article still present with title " + article_title, 5);
+        this.waitForElementNotPresent(article_xpath,"Saved article still present with title" + article_title, 5);
     }
     public void swipeByArticleToDelete(String article_title)
     {
         this.waitForArticleToAppearByTitle(article_title);
-        String article_xpath = getFolderXpathByName(article_title);
+        String article_xpath = getSaveArticleXpathByTitle(article_title);
         this.swipeElementToLeft(
                 article_xpath,
                 "Cannot find saved article"

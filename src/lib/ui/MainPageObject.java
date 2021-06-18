@@ -112,16 +112,11 @@ public class MainPageObject {
 
         TouchAction action=new TouchAction(driver);
         action
-//                .press(right_x,middle_y)
-//                .waitAction(300)
-//                .moveTo(left_x,middle_y)
-//                .release()
-//                .perform();
-        .press(PointOption.point(right_x,middle_y))
-        .waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)));
-
-
-
+                .press(PointOption.point(right_x,middle_y))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)))
+                .moveTo(PointOption.point(left_x,middle_y))
+                .release()
+                .perform();
     }
     public int getAmountOfElements(String locator)
     {
