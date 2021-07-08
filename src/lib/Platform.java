@@ -13,12 +13,18 @@ public class Platform {
     private static final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
 
     private static Platform instance;
+
     private Platform()
     {
 
     }
-    private static Platform getInstance()
+    public static Platform getInstance()
     {
+        if (instance == null)
+        {
+            instance = new Platform();
+        }
+        return instance;
 
     }
 
